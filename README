@@ -1,0 +1,20 @@
+Program made to simulate data sets of a neutral locus partially linked to a balanced polymorphism with overdominant selection in an isolation-with-divergence speciation model as investigated in Recent and Ancient Signature of Balancing Selection around the S-Locus in Arabidopsis halleri and A. lyrata, Molecular Biology and Evolution (2012) .
+The neutral flanking locus was assumed to be L base pairs long, each position could be potentially affected by mutation at a rate µ_neut. The ancestral allele is 0 and the derived one is 1. For the selected locus, we modeled symmetric overdominance with a selection coefficient s against the homozygotes. Our mutation model allows 20 functionally different alleles, with a mutation rate to a new, functionally different allele, of µ_sel per generation and an initial number of 10 alleles. We first modeled evolution in a single ancestral population of effective size NA during Tbefore generations, until mutation–selection–drift equilibrium was reached. Speciation was then assumed to occur, and the ancestral population was split into two populations with effective sizes N1 and N2, which then evolved in isolation for a further Tsplit (Tafter) generations. For each replicate simulation, we then sampled alleles at the neutral locus from nsam1 and nsam2 diploid individuals from daughter populations one and two.
+
+Required parameters :
+	.Ancestral population size NA : the number of diploid individuals in the ancestral population.
+	.Daugther 1 (and 2) population sizes N1 and N2 : the number of diploid individuals in the present population 1 (and 2).
+	.Number of Generations to simulate before the split : a great value may dramatically extend the computation time but is required to reach equilibrium at the speciation time. A value Tbefore=8xNA
+has been chosen in Roux &al (2012).
+	.Number of Generations to simulate after the split, i.e, the time of speciation.
+	.Recombination Rate between selected and neutral loci : the recombinational distance r expressed in number of crossing-over events by generation such as rho=4.N.r
+	.Number of allelic states at selected locus : the starting number of alleles at the target of balancing selection.
+	.Mutation rate µ_sel at selected locus : the rate of appearance of new alleles.
+	.Selection coefficient against homozygotes at selected locus : a value s in ]0-1[ defining the selection coefficient of homozygotes W=1-s.
+	.Number L of biallelic positions in the neutral locus : the length of the neutral locus in base pairs.
+	.Mutation rate µ_neut at each site of neutral locus : the mutation rate /bp/generation
+	.Number of sampled individuals from population 1 (and 2), nsam1 and nsam2.
+
+Depends on the python library simuPOP
+http://simupop.sourceforge.net/Cookbook/Overdominance
+
